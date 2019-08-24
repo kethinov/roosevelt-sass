@@ -252,7 +252,7 @@ describe('Roosevelt Sass Section Test', function () {
       assert.strictEqual(test1, true)
       // see that the value in the css version file is correct
       const versionFileString = fs.readFileSync(path.join(appDir, 'statics', 'css', '_version.sass'), 'utf8')
-      const versionFileNum = versionFileString.split(`'`)
+      const versionFileNum = versionFileString.split('\'')
       const test2 = packageJSON.version === versionFileNum[1]
       assert.strictEqual(test2, true)
     })
@@ -264,7 +264,7 @@ describe('Roosevelt Sass Section Test', function () {
 
   it('should give a "error" string if there is a massive problem with the code that the program is trying to parse (typo)', function (done) {
     // Sass source script that has a error in it (typo)
-    const errorTest = `body { widthy: 300 pax`
+    const errorTest = 'body { widthy: 300 pax'
     // path of where the file with this script will be located
     const pathOfErrorStaticSass = path.join(appDir, 'statics', 'css', 'b.scss')
     // make this file before the test
