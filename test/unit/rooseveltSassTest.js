@@ -3,8 +3,8 @@
 const assert = require('assert')
 const fs = require('fs-extra')
 const path = require('path')
-const cleanupTestApp = require('../../node_modules/roosevelt/test/util/cleanupTestApp')
-const generateTestApp = require('../../node_modules/roosevelt/test/util/generateTestApp')
+const cleanupTestApp = require('../util/cleanupTestApp')
+const generateTestApp = require('../util/generateTestApp')
 const fork = require('child_process').fork
 const sass = require('node-sass')
 
@@ -60,6 +60,7 @@ describe('Roosevelt Sass Section Test', function () {
     generateTestApp({
       appDir: appDir,
       generateFolderStructure: true,
+      minify: false,
       css: {
         compiler: {
           nodeModule: '../../roosevelt-sass',
@@ -98,6 +99,7 @@ describe('Roosevelt Sass Section Test', function () {
     generateTestApp({
       appDir: appDir,
       generateFolderStructure: true,
+      minify: false,
       css: {
         compiler: {
           nodeModule: '../../roosevelt-sass',
@@ -177,7 +179,6 @@ describe('Roosevelt Sass Section Test', function () {
     generateTestApp({
       appDir: appDir,
       generateFolderStructure: true,
-      noMinify: false,
       css: {
         compiler: {
           nodeModule: '../../roosevelt-sass',
@@ -399,7 +400,6 @@ describe('Roosevelt Sass Section Test', function () {
     generateTestApp({
       appDir: appDir,
       generateFolderStructure: true,
-      noMinify: false,
       css: {
         compiler: {
           nodeModule: '../../roosevelt-sass'
